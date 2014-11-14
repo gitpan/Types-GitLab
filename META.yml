@@ -14,11 +14,11 @@ meta-spec:
   version: '1.4'
 name: Types-GitLab
 requires:
-  Types::Tiny: '1'
+  Type::Tiny: '1'
   namespace::clean: '0'
   strictures: '0'
 resources:
   bugtracker: https://github.com/bluefeet/Types-GitLab/issues
   homepage: https://github.com/bluefeet/Types-GitLab
   repository: https://github.com/bluefeet/Types-GitLab.git
-version: '0.01'
+version: '0.02'

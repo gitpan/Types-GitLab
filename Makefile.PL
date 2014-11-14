@@ -21,14 +21,14 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Types::GitLab",
   "PREREQ_PM" => {
-    "Types::Tiny" => 1,
+    "Type::Tiny" => 1,
     "namespace::clean" => 0,
     "strictures" => 0
   },
   "TEST_REQUIRES" => {
     "Test::Simple" => "0.94"
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -37,7 +37,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Test::Simple" => "0.94",
-  "Types::Tiny" => 1,
+  "Type::Tiny" => 1,
   "namespace::clean" => 0,
   "strictures" => 0
 );

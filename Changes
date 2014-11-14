@@ -1,5 +1,8 @@
 Revision history for Perl extension MooX::BuildArgs.
 
+0.02      2014-11-14
+- Fix bad Types::Tiny -> Type::Tiny reference.
+
 0.01      2014-11-14
  - First release.
 

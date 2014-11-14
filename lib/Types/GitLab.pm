@@ -1,5 +1,5 @@
 package Types::GitLab;
-$Types::GitLab::VERSION = '0.01';
+$Types::GitLab::VERSION = '0.02';
 =head1 NAME
 
 Types::GitLab - Type::Tiny types for GitLab stuff.
