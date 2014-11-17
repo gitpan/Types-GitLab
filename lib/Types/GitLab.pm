@@ -1,5 +1,5 @@
 package Types::GitLab;
-$Types::GitLab::VERSION = '0.02';
+$Types::GitLab::VERSION = '0.03';
 =head1 NAME
 
 Types::GitLab - Type::Tiny types for GitLab stuff.
@@ -31,6 +31,8 @@ GitLab's data types.
 use Type::Library -base;
 use Type::Utils -all;
 use Types::Standard -types;
+use Types::Common::Numeric -types;
+use URI;
 
 use strictures 1;
 use namespace::clean;
@@ -64,8 +66,41 @@ declare 'GitLabToken',
   as Str,
   where { length($_) == 20 and $_ !~ m{[^a-zA-Z0-9]} };
 
+=head2 GitLabAPIURI
+
+The value must be an L<URI> object.  A coercion is available to
+convert a C<Str>.
+
+=cut
+
+declare 'GitLabAPIURI',
+    as InstanceOf[ 'URI' ];
+
+coerce 'GitLabAPIURI',
+    from Str,
+    via { URI->new($_) };
+
+=head2 GitLabProjectID
+
+This type requires that the value by a positive integer.
+
+=cut
+
+declare 'GitLabProjectID',
+    as PositiveInt;
+
 1;
 __END__
+
+=head1 SEE ALSO
+
+=over
+
+=item *
+
+L<Types::Git>
+
+=back
 
 =head1 AUTHOR
 
@@ -73,13 +108,7 @@ Aran Clary Deltac <bluefeet@gmail.com>
 
 =head1 ACKNOWLEDGEMENTS
 
-Thanks to L<Type::Tiny> for making such a beautifully designed and
-independent type library.
-
-Thanks to L<GitLab|https://about.gitlab.com> for making a GitHub
-clone that is superior in many ways, and then open sourced it!
-
-And, finally, thanks to L<ZipRecruiter|https://www.ziprecruiter.com/>
+Thanks to L<ZipRecruiter|https://www.ziprecruiter.com/>
 for encouraging their employees to contribute back to the open
 source ecosystem.  Without their dedication to quality software
 development this distribution would not exist.

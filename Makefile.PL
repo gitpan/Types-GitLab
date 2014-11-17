@@ -22,13 +22,14 @@ my %WriteMakefileArgs = (
   "NAME" => "Types::GitLab",
   "PREREQ_PM" => {
     "Type::Tiny" => 1,
+    "URI" => 0,
     "namespace::clean" => 0,
     "strictures" => 0
   },
   "TEST_REQUIRES" => {
     "Test::Simple" => "0.94"
   },
-  "VERSION" => "0.02",
+  "VERSION" => "0.03",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -38,6 +39,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Test::Simple" => "0.94",
   "Type::Tiny" => 1,
+  "URI" => 0,
   "namespace::clean" => 0,
   "strictures" => 0
 );

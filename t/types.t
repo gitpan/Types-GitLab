@@ -49,4 +49,28 @@ subtest 'GitLabToken' => sub{
     );
 };
 
+subtest 'GitLabAPIURI' => sub{
+    ok(
+        GitLabAPIURI->check( URI->new('http://git.example.com/api/v3') ),
+        'good (object) value',
+    );
+
+    ok(
+        GitLabAPIURI->check( GitLabAPIURI->coerce('http://git.example.com/api/v3') ),
+        'good (coerced string) value',
+    );
+
+    ok(
+        (! GitLabAPIURI->check( 'http://git.example.com/api/v3' ) ),
+        'bad (string) value',
+    );
+};
+
+subtest 'GitLabProjectID' => sub{
+    ok( GitLabProjectID->check(1), 'good value' );
+    ok( (! GitLabProjectID->check(0) ), 'bad (non-positive) value' );
+    ok( (! GitLabProjectID->check(1.5) ), 'bad (fraction) value' );
+    ok( (! GitLabProjectID->check('abc') ), 'bad (alpha) value' );
+};
+
 done_testing;

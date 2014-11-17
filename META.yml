@@ -15,10 +15,11 @@ meta-spec:
 name: Types-GitLab
 requires:
   Type::Tiny: '1'
+  URI: '0'
   namespace::clean: '0'
   strictures: '0'
 resources:
   bugtracker: https://github.com/bluefeet/Types-GitLab/issues
   homepage: https://github.com/bluefeet/Types-GitLab
   repository: https://github.com/bluefeet/Types-GitLab.git
-version: '0.02'
+version: '0.03'
